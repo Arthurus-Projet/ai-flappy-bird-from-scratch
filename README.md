@@ -1,12 +1,12 @@
 # ai-flappy-bird-from-scratch
 
-Do you know genetic algorithms ❓ 
+Do you know genetic algorithms 
 
-These are algorithms that use the principle of natural selection. 🧬
+These are algorithms that use the principle of natural selection.
 
 We select the best individuals for a given environment, then these individuals reproduce and some of their genes mutate, and we repeat the process.
 
-🐤 Now how to apply it to flappy bird ❔
+🐤 Now how to apply it to flappy bird 
 
 Each bird is modeled by a neural network, with 2 input neurons :
 - Distance to nearest pipe 
@@ -25,5 +25,6 @@ Each bird is modeled by a neural network, with 2 input neurons :
 🐥 The new generation is now created, and the process is repeated until the birds never die.
 
 <img width="806" height="1051" alt="image" src="https://github.com/user-attachments/assets/02bb015f-7bf2-4784-b099-6fbd297df75e" />
+
 
 In this example, we can see that we are in generation 6 with 12 individuals alive.
