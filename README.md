@@ -1,8 +1,6 @@
 # ai-flappy-bird-from-scratch
 
-Do you know genetic algorithms 
-
-These are algorithms that use the principle of natural selection.
+Genetic algorithms  algorithms that use the principle of natural selection.
 
 We select the best individuals for a given environment, then these individuals reproduce and some of their genes mutate, and we repeat the process.
 
