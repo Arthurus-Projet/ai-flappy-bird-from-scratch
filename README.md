@@ -119,8 +119,4 @@ python main.py
 
 ---
 
-<div align="center">
 
-**Made with ❤️ and Python**
-
-</div>
