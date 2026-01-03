@@ -1,28 +1,126 @@
-# ai-flappy-bird-from-scratch
+<div align="center">
 
-Genetic algorithms  algorithms that use the principle of natural selection.
+# 🐤 AI Flappy Bird from Scratch
 
-We select the best individuals for a given environment, then these individuals reproduce and some of their genes mutate, and we repeat the process.
+**Watch birds evolve from hopeless to flawless through the power of neuroevolution!**
 
-🐤 Now how to apply it to flappy bird 
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Pygame](https://img.shields.io/badge/Pygame-2.0+-green?style=for-the-badge&logo=pygame&logoColor=white)](https://pygame.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-Each bird is modeled by a neural network, with 2 input neurons :
-- Distance to nearest pipe 
-- The vertical distance from the top of the nearest pipe
+An implementation of **Flappy Bird** where birds learn to play using **genetic algorithms** and **neural networks** — built entirely from scratch, without any ML library.
 
-4 hidden neurons and 1 output neuron with a threshold function : 
-- 1 : The bird jumps
-- 0 : The bird doesn't jump
+<br>
 
-🔍 Selection : we will select the birds with the best score (fitness function)
+<img width="450" alt="Demo" src="https://github.com/user-attachments/assets/02bb015f-7bf2-4784-b099-6fbd297df75e" />
 
-🥚 Reproduction : we will create a new generation of birds by averaging their weight. Average the weights of 2 birds, creating 2 new birds, and repeat the process for all the birds.
+*Generation 6 with 12 birds still alive — watch them evolve!*
 
-🐣 Mutation : randomly modify certain weights
+<br>
 
-🐥 The new generation is now created, and the process is repeated until the birds never die.
+</div>
 
-<img width="806" height="1051" alt="image" src="https://github.com/user-attachments/assets/02bb015f-7bf2-4784-b099-6fbd297df75e" />
+---
 
+## 🧠 How It Works
 
-In this example, we can see that we are in generation 6 with 12 individuals alive.
+### Neural Network Architecture
+
+Each bird is controlled by a simple **feedforward neural network**:
+
+```
+     INPUTS                  HIDDEN LAYER                 OUTPUT
+ ┌────────────┐             ┌────────────┐             ┌────────────┐
+ │  Distance  │───┐     ┌───│            │───┐         │            │
+ │  to pipe   │   ├─────┤   │  4 neurons │   ├─────────│   Jump?    │
+ └────────────┘   │     └───│            │───┘         │  (0 or 1)  │
+ ┌────────────┐   │         └────────────┘             └────────────┘
+ │  Vertical  │───┘
+ │  distance  │
+ └────────────┘
+```
+
+> **Output:** `1` → Bird jumps | `0` → Bird does nothing
+
+### Genetic Algorithm
+
+<table>
+<tr>
+<td align="center">🔍<br><b>Selection</b></td>
+<td align="center">🥚<br><b>Crossover</b></td>
+<td align="center">🧬<br><b>Mutation</b></td>
+<td align="center">🔄<br><b>Repeat</b></td>
+</tr>
+<tr>
+<td>Select birds with best fitness score</td>
+<td>Average weights of 2 parents to create offspring</td>
+<td>Randomly modify some weights</td>
+<td>New generation plays until perfection</td>
+</tr>
+</table>
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/Arthurus-Projet/ai-flappy-bird-from-scratch.git
+cd ai-flappy-bird-from-scratch
+
+# Install dependencies
+pip install pygame numpy
+
+# Run the simulation
+python main.py
+```
+
+---
+
+## 📁 Project Structure
+
+```
+📦 ai-flappy-bird-from-scratch
+ ┣ 🎮 main.py                  → Game loop & orchestration
+ ┣ 🧠 reseau_neuronal.py       → Neural network from scratch
+ ┣ 🧬 algorithme_genetique.py  → Selection, crossover, mutation
+ ┣ 🚧 tuyau.py                 → Pipe obstacles
+ ┣ 🎨 animations.py            → Rendering & sprites
+ ┗ 📸 illustrations/           → Screenshots
+```
+
+---
+
+## ⚙️ Configuration
+
+| Parameter | Description | Default |
+|:---------:|:-----------:|:-------:|
+| `POPULATION_SIZE` | Birds per generation | 50-100 |
+| `MUTATION_RATE` | Weight mutation probability | 0.1-0.2 |
+| `HIDDEN_NEURONS` | Hidden layer size | 4 |
+
+---
+
+## 🔬 Evolution Progress
+
+| Generation | Behavior |
+|:----------:|:---------|
+| **1-3** | 🎲 Random flying, instant crashes |
+| **4-10** | 📈 Learning to jump near pipes |
+| **10-20** | 🎯 Consistent navigation |
+| **20+** | 🏆 Near-perfect gameplay |
+
+---
+
+## 📚 Learn More
+
+- [Neuroevolution](https://en.wikipedia.org/wiki/Neuroevolution) — Wikipedia
+- [NEAT Algorithm](https://nn.cs.utexas.edu/downloads/papers/stanley.cec02.pdf) — Advanced technique
+
+---
+
+<div align="center">
+
+**Made with ❤️ and Python**
+
+</div>
